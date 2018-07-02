@@ -1,0 +1,47 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/search/search",
+    "pages/shop/shop"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0097ff",
+    "navigationBarTitleText": "外卖订餐",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar":{
+    "color":"#ccc",
+    "selectedColor":"#0097ff",
+    "backgroundColor":"#fff",
+    "borderStyle": "#d9d9d9",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"外卖",
+      "iconPath":"./imgs/index/index.png",
+      "selectedIconPath":"./imgs/index/on_index.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "./imgs/index/order.png",
+      "selectedIconPath": "./imgs/index/on_order.png"
+    },
+    {
+      "pagePath":  "pages/search/search",
+      "text": "搜索",
+      "iconPath": "./imgs/index/search.png",
+      "selectedIconPath": "./imgs/index/on_search.png"
+    },
+        {
+          "pagePath": "pages/user/user",
+          "text": "我的",
+          "iconPath": "./imgs/index/my.png",
+          "selectedIconPath": "./imgs/index/on_my.png"
+        }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+
+<view class='containter'>
+    <view  class='header'> 
+        <view class='sousuo' >
+         <icon type="search"  size="16" color="#dcdcdc"/>
+         <input class='' bindinput="bindKeyInput" placeholder="搜索餐厅" auto-focus/>
+        </view>
+        <button type="primary"  bindtap="doSearch" hover-class="other-button-hover">搜索</button>
+    </view>
+    <view class='main'>
+      <view class='search'>
+         <view class='searchlist'>
+           <view class='shoplist' wx:for="{{list}}" wx:key="{{item.id}}">
+            <navigator url="../shop/shop?id={{item.id}}">
+            <view class='img_box'>
+                <image src="{{imgshopUrl+item.image_path}}"></image>  
+            </view>    
+                <view class='right_box'>
+                   <view class='shopTop'>
+                      <view class="pingpai">品牌</view>
+                      <view class='shopname'>{{item.name}}</view>
+                      <view class='rightspan right mgr'>
+                         <view class='letter'>保</view>
+                         <view class='letter'>准</view>
+                         <view class='letter'>票</view>
+                      </view>
+                   </view>
+                   <view class='xxdiv'>
+                     <view class='xx'>
+                       xingxing
+                     </view>
+                     <view class='score'>
+                       {{item.rating}}
+                     </view>
+                     <view class='num'>
+                       月售{{item.recent_order_num}}单
+                     </view>
+                     <view class='rightspan right mgr'>
+                       <view class='fn' style='background:#{{item.delivery_mode.color}}'>
+                          {{item.delivery_mode.text}}
+                       </view>
+                       <view class='zs fs10'>
+                           准时达
+                       </view>
+                     </view>
+                     <view class='shopfoot'>
+                        <view class='money'>
+                           ￥{{item.float_minimum_order_amount}}起/{{item.piecewise_agent_fee.tips}}
+                        </view>
+                        <view class='distance'>
+                        <!-- <view class="locat">{{item.distance}}/</view> -->
+                           <view class="col">{{item.order_lead_time}}</view>
+                        </view>
+                     </view>
+                   </view>
+                </view>
+                
+            </navigator>
+            </view>
+         </view>
+      </view>
+    </view>
+  
+</view>

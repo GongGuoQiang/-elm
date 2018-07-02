@@ -1,0 +1,28 @@
+<view class='container'>
+  <view class='g-main'>
+    <view wx:if="{{car.length == 0}}" class='no_data'>
+      <image  src='../../imgs/index/no_order.png'></image>
+      <view class='no_text'>购物车，空空如也！！！</view>
+    </view>
+     <view class='data' wx:if="{{car.length > 0}}">
+        <view class='carlist' wx:for="{{car}}">
+          <view class='list'>
+            <view class='fl'>
+              <image src='{{imgshopUrl}}{{item.imgpath}}'></image>
+              <view class='name'>{{item.title}}</view>
+            </view>
+            <view class='fr'>等待支付</view>
+          </view>
+          <view class='list_bottom'>
+          <view class='name'>
+             {{item.goodsPicsInfo}}
+          </view>
+          <view class='fr price'>￥{{item.price}}</view>
+          </view>
+          <view class='g-right'>
+             <view class='a'>去支付</view>
+          </view>
+        </view>
+     </view>
+  </view>
+</view>

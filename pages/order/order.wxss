@@ -1,0 +1,77 @@
+/* pages/order/order.wxss */
+.carlist{
+   border-bottom: 30rpx solid #f0f0f2;
+}
+.carlist .list{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .8rem .6rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+.carlist .fl, .carlist .fl .name {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.fl image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.name{
+  font-size: 1rem;
+  color: #666;
+  margin-right: 5px;
+  margin-left: 30rpx;
+}
+.fr{
+  font-size: .8rem;
+    color: #888;
+}
+.list_bottom {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem .6rem;
+    font-size: .8rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+.list_bottom .name {
+    margin-left: 3rem;
+}
+.price {
+    color: #ff5339;
+}
+.g-right {
+    text-align: right;
+    padding: 1rem;
+    background: #fff;
+}
+.g-right .a {
+    font-size: .8rem;
+    color: #ff5339;
+    border: 1px solid #ff5339;
+    padding: .1rem .6rem;
+    border-radius: 4px;
+    display: inline-block
+}
+.no_data image{
+  width: 80%;
+  margin: 0 auto;
+}
+.no_data .no_text{
+  text-align: center;
+  padding: 20rpx;
+  font-size: 32rpx;
+  color: #888;
+}

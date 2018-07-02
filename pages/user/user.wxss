@@ -1,0 +1,68 @@
+.login_box{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #0097ff;
+  overflow: hidden;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+.login_box .fl{
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.login_box  .fl image{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+.fl .text{
+  color: #fff;
+  font-size: 32rpx;
+}
+.fl .text .name{
+   font-size: 38rpx;
+   margin-bottom: 10rpx;
+   background: transparent;
+   color: #fff;
+   border: 0;
+   position: static;
+}
+.g-money{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.g-money image{
+   width: 60rpx;
+   height: 60rpx;
+   margin-bottom: 10rpx;
+}
+.g-money .list{
+   padding: 20rpx;
+   font-size: 28rpx;
+   text-align: center;
+}
+.boottom{
+  border-bottom: 10px solid #f0f0f2;
+}
+.addr{
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.addr image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 30rpx;
+}
+.addr .name{
+  font-size: 32rpx;
+  color: #888;
+}

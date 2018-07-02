@@ -1,0 +1,246 @@
+/**index.wxss**/
+.slide-image{
+   height:400rpx;
+   width: 100%;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box;
+  display: flex;
+  z-index: 999;
+  overflow: hidden;
+  -webkit-transition: background 0.5s ease-in-out;
+}
+.header .location{
+    display: inline-block;
+    background: rgba(0,0,0,.3) ;
+    color: #fff;
+    font-size: 30rpx;
+    flex: 1;
+    align-items: center;
+    max-width: 200rpx;
+    border-radius: 50rpx;
+    padding: 0 20rpx ;
+    height: 50rpx;
+    margin-top: 20rpx;
+}
+.header .location image{
+  height: 40rpx;
+  width: 40rpx;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 7rpx;
+}
+.header .location .location_name{
+  display: inline-block;
+  line-height: 50rpx;
+  max-width: 140rpx;
+}
+.header .sousuo{
+   background: #fff;
+   border-radius: 50rpx;
+   font-size: 30rpx;
+   flex: 1;
+   margin: 0 50rpx;
+   align-items: center;
+   padding-left: 30rpx;
+   height: 50rpx;
+   margin-top:20rpx;
+}
+.header .sousuo input{
+  display: inline-block;
+}
+.header .sousuo icon{
+  vertical-align: top;
+  padding-top: 12rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.goodList image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+}
+.goodList{
+  font-size: 30rpx;
+  padding: 0 20rpx;
+}
+.good{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-around;
+  padding: 0 50rpx;
+  margin-top: 20rpx;
+}
+.discount{
+  text-align: center;
+  font-size: 30r0px;
+  font-weight: bold;
+  margin: 30rpx 0;
+}
+.discount::after{
+  content: '';
+  height: 10px;
+  width: 100%;
+  display: inline-block;
+  background: #f0f0f2;
+}
+.discount .name{
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.discount .name::after{
+  content: '';
+  height: 1px;
+  width: 100rpx;
+  display: inline-block;
+  background: #333;
+  margin-bottom: 15rpx;
+  margin-left: 40rpx;
+}
+.discount .name::before{
+  content: '';
+  height: 1px;
+  width: 100rpx;
+  display: inline-block;
+  background: #333;
+  margin-bottom: 15rpx;
+  margin-right: 40rpx;
+}
+.discount image{
+  width: 100%;
+  height: 400rpx;
+}
+.filter{
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  border: 1px solid #dcdcdc;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.shoplist{
+  padding:30rpx;
+  overflow: hidden;
+  font-weight: normal;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-flex; 
+  justify-content: space-between;
+}
+.img_box{
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+  margin-right: 15rpx;
+  float:left;
+}
+.img_box image{
+  height: 100%;
+  width: 100%;
+}
+.right_box{
+  font-size: 30rpx;
+  float: right;
+  flex-grow: 1;
+}
+.pingpai{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    background-color: #ffd930;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 20rpx;
+}
+.shopname{
+    font-weight: bold;
+    font-size: 0.8rem;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+}
+.shopTop{
+  line-height: 30rpx;
+  text-align: left;
+  font-weight: normal;
+}
+.rightspan {
+  float: right;
+}
+.rightspan .letter{
+  display: inline-block;
+    height: 14px;
+    border: 1px solid #A3ACB7;
+    margin-left: 3px;
+    padding: 1px;
+    color: #A3ACB7;
+    line-height: 14px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.right_box .xx{
+  display: inline-block;
+ 
+}
+.right_box .score{
+  color: #FE3D3D;
+  display: inline-block;
+  margin-left: 8rpx;
+}
+/* .right_box{
+   width: 562rpx;
+} */
+.xxdiv{
+  text-align: left;
+}
+.xxdiv .num{
+  display: inline-block;
+  margin: 0 10rpx;
+}
+.rightspan .fn{
+  display: inline-block;
+  color: #fff;
+  font-size: 26rpx;
+  margin: 0 10rpx;
+}
+.rightspan .zs{
+  display: inline-block;
+    display: inline-block;
+    height: 14px;
+    border: 1px solid #3190E8 ;
+    margin-left: 3px;
+    padding: 1px;
+    color: #3190E8 ;
+    line-height: 14px;
+    font-size: 26rpx;
+    border-radius: 2px;
+}
+.shopfoot{
+  display: block;
+}
+.shopfoot .money{
+  display: inline-block;
+  float: left;
+}
+.shopfoot .distance{
+  display: inline-block;
+  float: right;
+}
+.distance .locat{
+  display: inline-block
+}
+.distance .col{
+  display: inline-block
+}

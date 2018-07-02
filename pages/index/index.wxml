@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view scroll-y style="height: 100%;" bindscroll="scroll" scroll-top="{{scrollTop}}">
+    <view class="header {{scrollDown ? 'bg' : ''}}" >
+        <view class='location els' bindtap='location'>
+           <image src='../../imgs/index/icon_location.png'></image>
+           <view class='location_name els'>{{address}}</view>
+        </view>
+        <view class='sousuo' bindtap="tapSearch">
+         <icon type="search" size="13" color="#dcdcdc"/>
+         <input class='' placeholder="搜索" />
+        </view>
+    </view>
+       
+    <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}">
+        <block wx:for="{{banners}}" wx:key="item.id">
+            <swiper-item>
+              <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    
+     <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}">
+          <block wx:for="{{icons}}" wx:key="{{index}}" wx:for-item="list">
+              <swiper-item class="good">
+                <view class='goodList' wx:for="{{list}}" wx:key="{{item.id}}">
+                    <image src='{{item.img}}'></image>
+                    <view class='text'>{{item.name}}</view>
+                </view>
+              </swiper-item>
+          </block>
+      </swiper>
+      <view class='discount'>
+         <view class='name'>优惠专区</view>
+         <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527846822847&di=50965520d767aa3d3697002b1d06f381&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F121020%2F240425-12102020030650.jpg'></image>
+      </view>
+     <view class='discount'>
+         <view class='name'>为你优选</view>
+         <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527846822846&di=8cc331f3bab166084f4a6310676dcf46&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201406%2F03%2F20140603000405_N8UKE.jpeg'></image>
+      </view>
+      <view class='discount'>
+         <view class='name'>特色频道</view>
+         <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527846822846&di=6efdc88562228e8aee0b98a11fc8a5da&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F140816%2F330649-140Q6123U095.jpg'></image>
+      </view>
+      <view class='discount'>
+         <view class='name'>附近商家</view>
+         <view class='filter'>
+            <view class="title {{filterId==1 ? 'active' : ''}}"  data-id="1" bindtap='tapFilter'>综合排序<text class='v'>↓</text></view>
+            <view class="title {{filterId==2 ? 'active' : ''}}" data-id="2" bindtap='tapFilter'>销量最高<text class='v'>↓</text></view>
+            <view class="title {{filterId==3 ? 'active' : ''}}" data-id="3" bindtap='tapFilter'>距离最近<text class='v'>↓</text></view>
+         </view>
+         <view class='content'>
+            <view class='shoplist' wx:for="{{shops}}" wx:key="{{item.id}}">
+            <navigator url="../shop/shop?id={{item.id}}">
+            <view class='img_box'>
+                <image src="{{imgshopUrl+item.image_path}}"></image>  
+            </view>    
+                <view class='right_box'>
+                   <view class='shopTop'>
+                      <view class="pingpai">品牌</view>
+                      <view class='shopname'>{{item.name}}</view>
+                      <view class='rightspan right mgr'>
+                         <view class='letter'>保</view>
+                         <view class='letter'>准</view>
+                         <view class='letter'>票</view>
+                      </view>
+                   </view>
+                   <view class='xxdiv'>
+                     <view class='xx'>
+                       xingxing
+                     </view>
+                     <view class='score'>
+                       {{item.rating}}
+                     </view>
+                     <view class='num'>
+                       月售{{item.recent_order_num}}单
+                     </view>
+                     <view class='rightspan right mgr'>
+                       <view class='fn' style='background:#{{item.delivery_mode.color}}'>
+                          {{item.delivery_mode.text}}
+                       </view>
+                       <view class='zs fs10'>
+                           准时达
+                       </view>
+                     </view>
+                     <view class='shopfoot'>
+                        <view class='money'>
+                           ￥{{item.float_minimum_order_amount}}起/{{item.piecewise_agent_fee.tips}}
+                        </view>
+                        <view class='distance'>
+                        <!-- <view class="locat">{{item.distance}}/</view> -->
+                           <view class="col">{{item.order_lead_time}}</view>
+                        </view>
+                     </view>
+                   </view>
+                </view>
+                
+            </navigator>
+            </view>
+         </view>
+      </view>
+       </scroll-view>
+</view>

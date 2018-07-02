@@ -1,0 +1,187 @@
+
+<view class="containter">
+   <view class='shop'>
+     <view class='big'>
+        <view class='topbg'>
+          <image class='topbgimg' src='{{imgshopUrl}}{{shoplist.image_path}}'></image>
+        </view>
+        <view class='shoptop'>
+            <view class='topfoot'>
+               <view class='topleft'>
+                 <image src='{{imgshopUrl}}{{shoplist.image_path}}'></image>
+                </view>
+                <view class='topright'>
+                  <view class='fooota'>
+                     <view class='footname'>
+                        {{shoplist.name}}
+                     </view>
+                  </view>
+                  <view class='foootb'>
+                     <view class='nowrap'>
+                        {{shoplist.promotion_info}}
+                     </view>
+                  </view>
+                  <view class='foootc'>
+                     <view class='price'>
+                       {{shoplist.piecewise_agent_fee.tips}}
+                     </view>
+                     <view class='footmain'> 
+                        {{shoplist.delivery_mode.text}}
+                     </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+        <!--保  -->
+        <view class='shopmid'>
+           <view class='midtop'>
+             <view class='bao'>
+               {{shoplist.supports[0].icon_name}}
+             </view>
+             <view class='text'>
+             {{shoplist.supports[0].description}}
+             </view>
+             <view class='right'>
+               3个活动 ▼
+             </view>
+           </view>
+        </view>
+        <!-- tab -->
+        <view class='mytab'>
+           <view class="shangping {{filterId==1 ? 'on' : ''}}" data-id="1" bindtap='tablist'>商品</view>
+           <view class="pingfen {{filterId==2 ? 'on' : ''}}" data-id="2"  bindtap='tablist'> 
+           评分<view class='num'>{{shoplist.rating}}</view>
+           </view>
+        </view>
+        <!--content  -->
+         <view class="content {{filterId==1 ? 'show' : ''}}" >
+         <scroll-view class="fl" scroll-y="true"  > 
+          <view class='fl'>
+            <view wx:for="{{shop}}" class="left_div {{ison==item.id ? 'on' : ''}}"    wx:key="item.id" data-index="{{item.id}}" bindtap='ison' >
+               {{item.name}}
+            </view>
+          </view>
+          </scroll-view>
+           <scroll-view class="goods-container"  scroll-y="true" scroll-into-view="yy{{toView}}" bindscroll="onGoodsScroll" > 
+               <view class='itembox' wx:for="{{goods}}" wx:key="*this" id="yy{{item.id}}" >
+                <view class="item"> 
+                  <view class='item_top'>
+                        <view class='name'>
+                            {{item.name}}
+                        </view>
+                        <view class='description'>
+                            {{item.description}}
+                        </view>
+                  </view>
+                  <view class='item_main'>
+                      <view class='iteminfo' wx:for="{{item.foods}}" wx:for-item="foodItem" wx:key="index">
+                        <view class='itemsub'>
+                          <image src="{{imgshopUrl}}{{foodItem.image_path}}"></image>
+                          <view class='subright'>
+                            <view class='name'>{{foodItem.name}}</view>
+                            <view class='text'>
+                                {{foodItem.tips}}
+                            </view>
+                              <view class='price'>
+                                ￥{{foodItem.specfoods[0].price}}
+                                <view class='yuanjia'>{{foodItem.specfoods[1].price}}</view>
+                                <view class='buynum'>
+                                <image bindtap='reduce' data-food="{{foodItem}}" class="{{foodItem.mynum > 0 ? 'show' : 'hide'}}" src='../../imgs/shop/jian.png'></image>
+                                <view class=" num {{foodItem.mynum > 0 ? 'show' : 'hide'}}">{{foodItem.mynum}}</view>
+                                  <image bindtap='toCart' data-food="{{foodItem}}"  src="../../imgs/shop/jia.png"></image>
+                                </view>
+                              </view>
+                          </view>
+                        </view>
+                      </view>  
+                  </view>
+                  </view>
+                </view> 
+          </scroll-view>  
+        </view>
+        <view class="content {{filterId==2 ? 'show' : ''}}">
+           <view class='scoretop'>
+              <view class='scoretopleft'>
+                 <view class='rating'>{{shoplist.rating}}</view>
+                 <view class='pingjia'>综合评价</view>
+                 <view class='rating'>高于周边商家{{scorelist.compare_rating*100}}%</view>
+              </view>
+              <view class='scoretopright'>
+                  <view class='fuwu'>
+                    <view >服务评价</view>
+                    <view class='red'>4.7</view>
+                  </view>
+                  <view class='caiping'>
+                    <view>菜品评价</view>
+                    <view class='red'>4.8</view>
+                  </view>
+                  <view class='time'>
+                    <view>送达时间</view>
+                    <view>{{scorelist.deliver_time}}分钟</view>
+                  </view>
+              </view>
+           </view>
+           <view class='scoremain'>
+             <scroll-view  scroll-y="true" >
+                <view  wx:for="{{scoretags}}" class="scoremaintop {{item.unsatisfied}}">
+                  {{item.name}}{{item.count}}
+                </view>
+                <view class='scoremaininfo'>
+                    <view class='scoreitem' wx:for="{{score}}">
+                       <view class='scoreitemleft'>
+                             <image src="{{imgscore}}{{item.avatar}}{{jpg}}"></image>
+                          </view>
+                          <view class='scoreitemright'>
+                            <view class=''>
+                              <view>{{item.username}}</view>
+                              <view>{{item.rated_at}}</view>
+                            </view>
+                            <view>{{item.time_spent_desc}}</view>
+                            <view class='scoreimgbox'>
+                            <image wx:for="{{item.item_ratings}}" src="{{imgscore}}{{item.image_hash}}{{jpg}}"></image>
+                            </view>
+                       </view>
+                    </view>
+                </view>
+             </scroll-view>
+           </view>
+        </view> 
+     </view>
+      <view class="bottom {{showcar ? '' : 'on'}}" >
+           <view class='footleft' bindtap='showcar'>
+                <view class='footlogo'>
+                    <image src="../../imgs/shop/car.png"></image>
+                    <view class='rednum'>{{rednum}}</view>
+                </view>
+                <view class='footmain'>
+                    <view class='weixuan ' wx:if="{{showcar}}">未选购商品</view>
+                    <view class='price' wx:if="{{!showcar}}">￥{{sunPrice}}</view>
+                    <view class='num' wx:if="{{!showcar}}">配送费约￥5</view>
+                </view>
+           </view>
+           <view class='footright'>
+              <view class='btn' wx:if="{{showcar}}">￥20起送</view>
+              <view class='btn' wx:if="{{!showcar}}">去结算</view>
+           </view> 
+      </view>
+      <view class="model {{showcarbox ? 'show' : 'hide'}}" >
+         <view class='main'>
+            <view class='carTop'>
+               <view class='title'>购物</view>
+               <view class='right' bindtap='remove'>清空</view>
+            </view>
+            <view class='carmainbox'>
+               <view class='carbox' wx:for="{{cars}}">
+                  <view class='name'>{{item.title}}</view>
+                  <view class='price_box'>
+                     <view class='price'>￥{{item.price}}</view>
+                     <image bindtap='reducecar' data-food="{{item.title}}" src='../../imgs/shop/jian.png'></image>
+                     <view class='num'>{{item.quantity}}</view>
+                     <image bindtap='addcar'  data-food="{{item.title}}" src='../../imgs/shop/jia.png'></image>
+                  </view>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
